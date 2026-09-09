@@ -1,35 +1,195 @@
 .header {
-  text-align: center;
-  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.brand {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--accent);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.searchButton:hover {
+  color: var(--text);
+}
+
+.talkButton {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.talkButton:hover {
+  opacity: 0.9;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-areas:
+    "eyebrow avatar"
+    "name avatar"
+    "role avatar"
+    "socials avatar";
+  align-items: center;
+  column-gap: 3rem;
+  text-align: left;
+  padding: 3rem 0 0;
 }
 
 .eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  margin: 0;
+  grid-area: eyebrow;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
 }
 
 .name {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0.25rem 0;
+  grid-area: name;
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  color: var(--text);
 }
 
 .role {
-  font-size: 1rem;
+  grid-area: role;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
   font-weight: 400;
-  margin: 0 0 1rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
 }
 
 .avatar {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 1rem;
-  display: block;
+  grid-area: avatar;
+  justify-self: end;
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0;
+  background: var(--surface);
 }
 
 .socials {
+  grid-area: socials;
+  justify-self: start;
   display: flex;
   gap: 0.75rem;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
   justify-content: center;
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.socials svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navActions {
+    align-self: flex-start;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "eyebrow"
+      "name"
+      "role"
+      "socials";
+    text-align: center;
+  }
+
+  .avatar {
+    justify-self: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .socials {
+    justify-self: center;
+  }
 }

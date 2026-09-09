@@ -19,7 +19,7 @@ function Contact() {
 
     if (sent) {
         return (
-            <div className={styles.contact}>
+            <div className={styles.contact} id="contact">
                 <h1 className={styles.title}>Contact Me</h1>
                 <p className={styles.confirmation}>Thanks {form.name}, I'll get back to you!</p>
             </div>
@@ -27,7 +27,7 @@ function Contact() {
     }
 
     return(
-        <div className={styles.contact}>
+        <div className={styles.contact} id="contact">
             <h1 className={styles.title}>Contact Me</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <input className={styles.input} name="name" value={form.name} onChange={handleChange} placeholder="Name" required />

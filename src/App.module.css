@@ -1,29 +1,46 @@
 .app {
-  font-family: system-ui, -apple-system, sans-serif;
+  --bg: #18181b;
+  --surface: #232326;
+  --text: #f5f5f0;
+  --muted: #ada9a3;
+  --border: #2e2e32;
+  --accent: #e8622c;
+
+  font-family: 'Work Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.5;
-  max-width: 700px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem clamp(1.5rem, 6vw, 6rem) 4rem;
 }
 
 .section {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 .sectionTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text);
 }
 
 .skillsList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
 .projectsList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .skillsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

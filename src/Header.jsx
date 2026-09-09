@@ -1,12 +1,30 @@
 import styles from './Header.module.css';
+import kimPhoto from './assets/me/Kim.jpg';
 
 function Header() {
   return (
     <header className={styles.header}>
+      <nav className={styles.nav}>
+        <span className={styles.brand}>Kim Josiah Gavino</span>
+        <div className={styles.navLinks}>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div className={styles.navActions}>
+          <button className={styles.searchButton} aria-label="Search" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </button>
+          <a href="#contact" className={styles.talkButton}>Let's Talk</a>
+        </div>
+      </nav>
+      <div className={styles.hero}>
         <h3 className={styles.eyebrow}>HELLO MY NAME IS</h3>
         <h1 className={styles.name}>Kim Josiah Gavino</h1>
         <h3 className={styles.role}>I'm a Full Stack Web Developer</h3>
-        <img className={styles.avatar} alt="Kim Josiah Gavino"></img>
+        <img className={styles.avatar} src={kimPhoto} alt="Kim Josiah Gavino"></img>
         <div className={styles.socials}>
         <a>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -24,6 +42,7 @@ function Header() {
             </svg>
         </a>
         </div>
+      </div>
     </header>
   );
 }

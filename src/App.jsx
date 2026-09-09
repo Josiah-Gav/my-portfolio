@@ -3,33 +3,50 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 import styles from './App.module.css';
+import kimphoto from './assets/me/Kim.jpg';
+import telemed from './assets/icons/Telemed.png';
+import luminest from './assets/icons/luminest-icon.png';
+import bird from './assets/icons/Bird.png';
+import phpIcon from './assets/icons/php-svgrepo-com.svg';
+import laravelIcon from './assets/icons/Laravel.svg';
+import reactIcon from './assets/icons/React.svg';
+import pythonIcon from './assets/icons/Python.svg';
+import djangoIcon from './assets/icons/Django.svg';
+import javaIcon from './assets/icons/Java.svg';
+import javascriptIcon from './assets/icons/js-svgrepo-com.svg';
+import flutterIcon from './assets/icons/Flutter.svg';
+import html5Icon from './assets/icons/HTML5.svg';
+import css3Icon from './assets/icons/CSS3.svg';
+import mysqlIcon from './assets/icons/MySQL.svg';
+import tailwindIcon from './assets/icons/Tailwind CSS.svg';
 
 const skillsList = [
-  { image: "", alt: "PHP" },
-  { image: "", alt: "Laravel" },
-  { image: "", alt: "React" },
-  { image: "", alt: "Python" },
-  { image: "", alt: "Django" },
-  { image: "", alt: "Java" },
-  { image: "", alt: "JavaScript" },
-  { image: "", alt: "Flutter" },
-  { image: "", alt: "HTML" },
-  { image: "", alt: "CSS" },
-  { image: "", alt: "MySql" },
+  { image: phpIcon, alt: "PHP" },
+  { image: laravelIcon, alt: "Laravel" },
+  { image: reactIcon, alt: "React" },
+  { image: pythonIcon, alt: "Python" },
+  { image: djangoIcon, alt: "Django" },
+  { image: javaIcon, alt: "Java" },
+  { image: javascriptIcon, alt: "JavaScript" },
+  { image: flutterIcon, alt: "Flutter" },
+  { image: html5Icon, alt: "HTML" },
+  { image: css3Icon, alt: "CSS" },
+  { image: mysqlIcon, alt: "MySql" },
+  { image: tailwindIcon, alt: "Tailwind" },
 ];
 
 const projectsList = [
-  { image: "", alt: "CLSU Telemedicine", title: "CLSU Telemedicine", description: "A telemedicine platform for CLSU students and faculty." },
-  { image: "", alt: "Luminest", title: "Luminest", description: "A Web App for Real Estate Agents." },
-  { image: "", alt: "Flappy Pus", title: "Flappy Pus", description: "A fun flappy bird game made in unity." },
-  { image: "", alt: "My Portfolio", title: "My Portfolio", description: "A personal portfolio website for me." },
+  { image: telemed, alt: "CLSU Telemedicine", title: "CLSU Telemedicine", description: "A telemedicine platform for CLSU students and faculty." },
+  { image: luminest, alt: "Luminest", title: "Luminest", description: "A Web App for Real Estate Agents." },
+  { image: bird, alt: "Flappy Pus", title: "Flappy Pus", description: "A fun flappy bird game made in unity." },
+  { image: kimphoto, alt: "My Portfolio", title: "My Portfolio", description: "A personal portfolio website for me." },
 ];
 
 function App() {
   return (
     <div className={styles.app}>
       <Header/>
-      <div className={styles.section}>
+      <div className={styles.section} id="skills">
         <h2 className={styles.sectionTitle}>My Skills</h2>
         {/* Arrow function in .map(); props (image/alt) passed down to Skills */}
         <div className={styles.skillsList}>
@@ -38,7 +55,7 @@ function App() {
           ))}
         </div>
       </div>
-      <div className={styles.section}>
+      <div className={styles.section} id="projects">
         <h2 className={styles.sectionTitle}>My Projects</h2>
         {/* Arrow function in .map(); props (image/alt/title/description) passed down to Projects */}
         <div className={styles.projectsList}>

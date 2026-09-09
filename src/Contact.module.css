@@ -1,31 +1,56 @@
 .contact {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  max-width: 400px;
+  gap: 1rem;
+  max-width: 420px;
 }
 
 .input {
-  font: inherit;
-  padding: 0.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 .submit {
+  font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
   align-self: flex-start;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
 }
 
 .confirmation {
+  font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
+  color: var(--muted);
 }
