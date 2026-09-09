@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Header from './Header';
 import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
+import Footer from './Footer';
 import styles from './App.module.css';
 import kimphoto from './assets/me/Kim.jpg';
 import telemed from './assets/icons/Telemed.png';
@@ -43,9 +45,15 @@ const projectsList = [
 ];
 
 function App() {
+  // State: current color theme, toggled from the nav
+  const [theme, setTheme] = useState('dark');
+
+  // Event handling: flips between 'dark' and 'light' (arrow function)
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+
   return (
-    <div className={styles.app}>
-      <Header/>
+    <div className={styles.app} data-theme={theme}>
+      <Header theme={theme} onToggleTheme={toggleTheme}/>
       <div className={styles.section} id="skills">
         <h2 className={styles.sectionTitle}>My Skills</h2>
         {/* Arrow function in .map(); props (image/alt) passed down to Skills */}
@@ -65,6 +73,7 @@ function App() {
         </div>
       </div>
       <Contact/>
+      <Footer/>
     </div>
   );
 }
