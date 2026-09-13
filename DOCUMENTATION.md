@@ -478,8 +478,6 @@ kimjosiah-portfolio/
 ├── index.html
 ├── package.json
 ├── vite.config.js
-├── DOCUMENTATION.md          <- this file
-├── screenshots/              <- put your screenshots here
 └── src/
     ├── main.jsx              entry point, mounts App into #root
     ├── App.jsx               puts all components together, holds theme state and content data
